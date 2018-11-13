@@ -1,10 +1,15 @@
 const restify = require('restify');
 const mongoose = require('mongoose');
 const config = require('./config/config');
+const rjwt = require('restify-jwt-community');
 
 const server = restify.createServer();
 
+//Middleware
 server.use(restify.plugins.bodyParser());
+
+//Protect all routes except for register and login
+server.use(rjwt({secret: config.JWT_SECRET}).unless({path: ['/api/v1/user/register', '/api/v1/user/login']}));
 
 server.listen(config.port, () => {
 

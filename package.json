@@ -25,9 +25,6 @@
     "eslint": "^5.9.0",
     "jest": "^23.6.0"
   },
-
-
-  
   "jest": {
     "testEnviroment": "node",
     "verbose": true,
@@ -40,7 +37,6 @@
       }
     }
   },
-
   "eslintConfig": {
     "env": {
       "node": true
@@ -49,7 +45,10 @@
       "eqeqeq": "error",
       "no-undef": "error",
       "comma-dangle": "warn",
-      "indent": ["error", "tab"],
+      "indent": [
+        "error",
+        "tab"
+      ],
       "prefer-template": "warn",
       "no-empty": "error",
       "no-redeclare": "error",
@@ -59,7 +58,5 @@
       "prefer-const": "warn",
       "global-require": "error"
     }
-
   }
-
 }

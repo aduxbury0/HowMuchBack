@@ -13,6 +13,12 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+
+    jwToken: {
+        type: String,
+        default: '',
+        
     }
 });
 
