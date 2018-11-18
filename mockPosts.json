@@ -1,0 +1,9 @@
+{
+        "title": "test1",
+        "description": "test1 desc",
+        "quantity": "1",
+        "condition": "new",
+        "brand": "TestCo",
+        "model": "TestCo 2000",
+        "madeIn": "China"
+}

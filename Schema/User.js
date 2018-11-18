@@ -3,23 +3,23 @@ const timestamp = require('mongoose-timestamp');
 
 const UserSchema = new mongoose.Schema({
 
-    username: {
-        type: String,
-        required: true,
-        trim: true
-    },
+	username: {
+		type: String,
+		required: true,
+		trim: true
+	},
     
-    password: {
-        type: String,
-        required: true,
-        trim: true
-    },
+	password: {
+		type: String,
+		required: true,
+		trim: true
+	},
 
-    jwToken: {
-        type: String,
-        default: '',
+	jwToken: {
+		type: String,
+		default: ''
         
-    }
+	}
 });
 
 UserSchema.plugin(timestamp);
