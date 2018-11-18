@@ -1,0 +1,65 @@
+{
+  "name": "api-development-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.coventry.ac.uk/duxburya/API-Development-Backend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.11",
+    "mongoose-timestamp": "^0.6.0",
+    "restify": "^7.2.2",
+    "restify-errors": "^6.1.1",
+    "restify-jwt-community": "^1.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "jest": "^23.6.0"
+  },
+
+
+  
+  "jest": {
+    "testEnviroment": "node",
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": -10
+      }
+    }
+  },
+
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "eqeqeq": "error",
+      "no-undef": "error",
+      "comma-dangle": "warn",
+      "indent": ["error", "tab"],
+      "prefer-template": "warn",
+      "no-empty": "error",
+      "no-redeclare": "error",
+      "no-unused-vars": "error",
+      "no-const-assign": "error",
+      "no-var": "error",
+      "prefer-const": "warn",
+      "global-require": "error"
+    }
+
+  }
+
+}
