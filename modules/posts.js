@@ -62,6 +62,7 @@ module.exports = {
 
 			Post.find()
 				.populate({path: 'users', select: 'username'})
+				.populate('replies')
 				.then((posts) => {
 					if(posts) {
 						resolve(posts);
@@ -87,6 +88,7 @@ module.exports = {
 				const id = postId.id;
 				Post.findById(id)
 					.populate({path: 'users', select: 'username'})
+					.populate('replies')
 					.then((post) => {
 
 						if(post) {
@@ -120,9 +122,11 @@ module.exports = {
 			const query = {};
 			query[key] = value;
 			Post.find(query)
+				.populate({path: 'users', select: 'username'})
+				.populate('replies')
 				.then((posts) => {
 					if(posts){
-						if(posts === []) {
+						if(posts.length === 0) {
 							reject('No matching posts');
 						}
 
