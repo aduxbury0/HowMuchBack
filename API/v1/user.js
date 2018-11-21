@@ -10,6 +10,8 @@ module.exports = server => {
         
 		const result = account.registerAccount(username, password)
 			.then(() => {
+				res.header("Access-Control-Allow-Origin", "*");
+				res.header("Access-Control-Allow-Headers", "X-Requested-With");
 				res.send(201);
 				next();
 			})
@@ -30,6 +32,8 @@ module.exports = server => {
 
 		account.login(username, password)
 			.then((token) => {
+				res.header("Access-Control-Allow-Origin", "*");
+				res.header("Access-Control-Allow-Headers", "X-Requested-With");
 				res.send(200, token);
 				next();
 
