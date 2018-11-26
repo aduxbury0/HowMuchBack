@@ -109,7 +109,7 @@ module.exports = {
 				reject('Invalid post ID type');
 			}
 		});
-	}, //!getAllPosts()
+	}, //!getPost()
 
 	/* Takes a category (an attribute of the Post Schema) and a searchData (the data 
     related to that attribute) and will resolve with a JSON document containing all results */

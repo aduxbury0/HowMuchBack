@@ -9,7 +9,7 @@ module.exports = {
     post itself */
 	addReply(passedToken, replyData, postId) {
 		return new Promise((resolve, reject) => {
-            
+            console.log(postId)
 			const token = passedToken.substring(7, passedToken.length);
 			const decoded = jwt.decode(token);
 			const { content, url } = replyData;
@@ -24,10 +24,11 @@ module.exports = {
 				.then((reply) => {
 
 					Post.findOneAndUpdate(
-						postId,
+						{_id: postId},
 						{$push: {replies: reply._id}},
 					)
 						.then((post) => {
+							console.log(post);
 							resolve(post);
 
 						})

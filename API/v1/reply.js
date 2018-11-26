@@ -30,7 +30,7 @@ module.exports = server => {
 	server.patch('/api/v1/comment/vote', (req, res, next) => {
 		
 		replyFunctions.vote(req.query.voteType, req.query.replyId)
-			.then(() => {
+			.then((reply) => {
 				res.send(204);
 				next();
 			})

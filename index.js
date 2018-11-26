@@ -10,7 +10,7 @@ const server = restify.createServer();
 server.use(restify.plugins.bodyParser());
 
 //Protect all routes except for register and login
-server.use(rjwt({secret: config.JWT_SECRET}).unless({path: ['/api/v1/user/register', '/api/v1/user/login']}));
+server.use(rjwt({secret: config.JWT_SECRET}).unless({path: ['/api/v1/user/register', '/api/v1/user/login', '/api/v1/posts/all', '/api/v1/posts/one', '/api/v1/posts/search']}));
 server.use(restify.plugins.queryParser());
 
 server.listen(config.port, () => {
