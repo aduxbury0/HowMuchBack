@@ -10,7 +10,7 @@ const server = restify.createServer();
 server.use(restify.plugins.bodyParser());
 
 //Protect all routes except for register and login
-server.use(rjwt({secret: config.JWT_SECRET}).unless({path: ['/api/v1/user/register', '/api/v1/user/login', '/api/v1/posts/all', '/api/v1/posts/one', '/api/v1/posts/search']}));
+server.use(rjwt({secret: config.JWT_SECRET}).unless({path: ['/', '/api/v1/user/register', '/api/v1/user/login', '/api/v1/posts/all', '/api/v1/posts/one', '/api/v1/posts/search']}));
 server.use(restify.plugins.queryParser());
 
 server.listen(config.port, () => {
@@ -27,6 +27,12 @@ db.once('open', () => {
 	require('./API/v1/user')(server);
 	require('./API/v1/post')(server);
 	require('./API/v1/reply')(server);
+	server.get('/', (req, res, next) => {
+		
+		res.send(200, 'How Much Web API');
+
+	});
+	
 	console.log(`Server started on port: ${config.port}`);
     
 });
