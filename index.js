@@ -1,4 +1,8 @@
 /* eslint global-require: 0 */
+
+//Cors is not enabled by default as it would pose a major security risk to a deployed website, run the below to open a dev session of chrome with no web security to simulate operational use
+//chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+
 const restify = require('restify');
 const mongoose = require('mongoose');
 const config = require('./config/config');
