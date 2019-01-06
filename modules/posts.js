@@ -14,7 +14,6 @@ module.exports = {
 			
 			const token = passedToken.substring(7, passedToken.length);
 			const decoded = jwt.decode(token);
-			
 			User.findOne({username: decoded.username})
 				.then( async (user) => {
 

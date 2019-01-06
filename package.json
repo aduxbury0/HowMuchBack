@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha --timeout 5000",
     "lint": "eslint ./",
     "lintfix": "eslint --fix ./"
   },
@@ -20,13 +20,16 @@
     "mongoose": "^5.3.12",
     "mongoose-timestamp": "^0.6.0",
     "restify": "^7.2.2",
+    "restify-cors-middleware": "^1.1.1",
     "restify-errors": "^6.1.1",
     "restify-jwt-community": "^1.0.8"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "eslint": "^5.9.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "mocha": "^5.2.0"
   },
   "jest": {
     "testEnviroment": "node",
