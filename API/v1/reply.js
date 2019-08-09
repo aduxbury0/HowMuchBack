@@ -4,7 +4,7 @@ const replyFunctions = require('../../modules/reply');
 module.exports = server => {
 
 	server.post('/api/v1/comment/post', (req, res, next) => {
-
+		console.log(req.query.postId)
 		replyFunctions.addReply(req.headers.authorization, req.body ,req.query.postId)
 			.then(() => {
 				res.send(201, 'Reply successfully created');
